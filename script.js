@@ -6,7 +6,7 @@ var Stack = function(){
   }
     
   this.push = function(x){
-    this.stack.push(myStack);
+    this.stack.push(x);
   }
     
   this.isEmpty = function(){
@@ -21,13 +21,15 @@ var Stack = function(){
   }
     
   this.peek = function(){
-    var pik = this.stack.slice(-1).pop();
+    var pik = this.stack[this.stack.length - 1];
     return pik;
   }
     
   this.pop = function(){
-    var popo = this.stack.pop();
+    var popo = this.stack[this.stack.length - 1];
+    this.stack = this.stack.slice(-1,0);
     return popo;
+    console.log(popo);
   }
 }
 
